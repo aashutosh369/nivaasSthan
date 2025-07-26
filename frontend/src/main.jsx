@@ -1,11 +1,19 @@
-
+import React from "react";
 import { createRoot } from "react-dom/client";
-import {BrowserRouter} from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App.jsx";
+import AuthContext from "./Context/AuthContext.jsx";
+import UserContext from "./Context/UserContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <App />
+    <AuthContext>
+      <UserContext>
+        <App />
+      </UserContext>
+    </AuthContext>
   </BrowserRouter>
 );
+
+// http://localhost:5173/
