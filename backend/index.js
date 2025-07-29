@@ -4,8 +4,9 @@ import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import authRoute from "./routes/auth.route.js";
 import cookieParser from "cookie-parser";
-import cors from "cors"
+import cors from "cors";
 import userRouter from "./routes/user.route.js";
+import listingRouter from "./routes/listing.route.js";
 
 dotenv.config();
 // getting PORT from dotenv file 
@@ -28,6 +29,9 @@ app.use(cookieParser())
 
 app.use("/api/auth", authRoute) // signup, login , logout Route
 app.use("/api/user", userRouter)
+
+//listing ke liye listingRouter
+app.use("/api/listing",listingRouter)
 
 // all requests coming from url at [http://localhost:8000/...] are listen by the express at the port ->.. 
 app.listen(port, async ()=>{

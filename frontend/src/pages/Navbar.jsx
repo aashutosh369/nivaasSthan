@@ -20,21 +20,30 @@ import axios from "axios";
 import { userDataContext } from "../Context/UserContext";
 
 function Navbar() {
-
   let navigate = useNavigate();
   let [showUserPopup, setShowUserPopup] = useState(false);
-  let { serverUrl } = useContext(authDataContext);
-  let {userData, setUserData} = useContext(userDataContext)
+  let [alert, setAlert] = useState(false);
+  let { serverUrl } = useContext(authDataContext); // authDataContext se ham serverUrl ka use kr sakte hain
+  let { userData, setUserData } = useContext(userDataContext); // userDataContext se ham loggedin user ka information ko access kr sakte hain
 
   const handleLogout = async () => {
-    try{
-        let LogoutResult = await axios.post(serverUrl + "api/auth/logout",{withCredentials:true})
-        setUserData(null);
-        console.log(LogoutResult);
-    }catch(error){
-        console.log(error);
+    try {
+      let LogoutResult = await axios.post(serverUrl + "api/auth/logout", {
+        withCredentials: true,
+      }); // backend me axios ke through post request bheja ja rha hai
+      setUserData(null); // logout ho to userData null ho jaye
+      setAlert(() => (prev) => !prev);
+      setTimeout(() => {
+        setAlert(() => {
+          (prev) => !prev;
+        });
+      }, 3000);
+      console.log(LogoutResult);
+      console.log("Logout Successfull!");
+    } catch (error) {
+      console.log(error);
     }
-  }
+  };
 
   return (
     <div className="">
@@ -53,15 +62,28 @@ function Navbar() {
           </button>
         </div>
         <div className="flex justify-center items-center  gap-[10px] mx-2 relative">
-          <p className="text-[18px] cursor-pointer rounded-[30px] hover:bg-[#ded9d9] px-[8px] py-[5px] hidden md:block ">
-            List Your Own
+          <p
+            className="text-[18px] cursor-pointer rounded-[30px] hover:bg-[#ded9d9] px-[8px] py-[5px] hidden md:block "
+            onClick={() => {
+              navigate("/listingpage1")
+              // userData ? navigate("/listingpage1") : navigate("/login");
+            }}
+          >
+            List Your Home
           </p>
           <div
             className="flex justify-center border-[2px] rounded-[30px] gap-5 p-1 px-2 hover:shadow-lg border-[#bdbaba]"
             onClick={() => setShowUserPopup((prev) => !prev)}
           >
-            {userData ==null && <CgProfile className="text-[25px] cursor-pointer" />}
-            {userData != null && <span className=" w-[30px] h-[30px] bg-black text-white rounded-full flex justify-center items-center text-[17px]">{userData.name.slice(0,1)}</span>}
+            {/* user login hone pr name dikhega aur logout hone pr userIcon dikhega */}
+            {userData == null && (
+              <CgProfile className="text-[25px] cursor-pointer" />
+            )}
+            {userData != null && (
+              <span className=" w-[30px] h-[30px] bg-black text-white rounded-full flex justify-center items-center text-[17px]">
+                {userData.name.slice(0, 1)}
+              </span>
+            )}
             <GiHamburgerMenu className="text-[25px] cursor-pointer" />
           </div>
 
@@ -70,23 +92,50 @@ function Navbar() {
           {showUserPopup && (
             <div className="w-[220px] h-[250px]  border-[1px] rounded-lg absolute top-[120%] right-[11%] z-10 border-[#aaa9a9] bg-[#f5f4f4]">
               <ul className="w-[100%] h-[100%] text-[17px] flex items-start justify-around flex-col">
-                <li
+                {!userData && <li
                   className="w-[100%] py-[10px] px-[10px] hover:bg-[#ffffff] cursor-pointer"
-                  onClick={() => navigate("/login")}
+                  onClick={() => {
+                    setShowUserPopup(false);
+                    navigate("/login");
+                  }}
                 >
                   Login
-                </li>
-                <li className="w-[100%] py-[10px] px-[10px] hover:bg-[#ffffff] cursor-pointer" onClick={()=>handleLogout()}>
+                </li>}
+                {userData && <li
+                  className="w-[100%] py-[10px] px-[10px] hover:bg-[#ffffff] cursor-pointer"
+                  onClick={() => {
+                    setShowUserPopup(false);
+                    handleLogout();
+                  }}
+                >
                   Logout
-                </li>
+                </li>}
                 <div className="w-[100%] h-[1px] bg-[#d8d6d6]"></div>
-                <li className="w-[100%] py-[10px] px-[10px] hover:bg-[#ffffff] cursor-pointer">
+                <li
+                  className="w-[100%] py-[10px] px-[10px] hover:bg-[#ffffff] cursor-pointer"
+                  onClick={() => {
+                    setShowUserPopup(false);
+                     navigate("/listingpage1")
+                    // userData ? navigate("/listingpage1") : navigate("/login")
+                    
+                  }}
+                >
                   List your Home
                 </li>
-                <li className="w-[100%] py-[10px] px-[10px] hover:bg-[#ffffff] cursor-pointer">
+                <li
+                  className="w-[100%] py-[10px] px-[10px] hover:bg-[#ffffff] cursor-pointer"
+                  onClick={() => {
+                    setShowUserPopup(false);
+                  }}
+                >
                   My Listing
                 </li>
-                <li className="w-[100%] py-[10px] px-[10px] hover:bg-[#ffffff] cursor-pointer">
+                <li
+                  className="w-[100%] py-[10px] px-[10px] hover:bg-[#ffffff] cursor-pointer"
+                  onClick={() => {
+                    setShowUserPopup(false);
+                  }}
+                >
                   Check Booking
                 </li>
               </ul>
@@ -94,6 +143,13 @@ function Navbar() {
           )}
         </div>
       </div>
+
+      {/* logout popup */}
+      {alert && (
+        <div className="text-red-800 bg-red-100 border border-red-300 text-center w-[20%] rounded-lg absolute left-0 p-3">
+          LoggedOut Successfully!
+        </div>
+      )}
 
       {/* search box small screen */}
       <div className="flex flex-row items-center relative w-[70%] md:hidden my-2 mx-auto">
