@@ -21,7 +21,7 @@ function ListingContext({ children }) {
 
   const handleAddListing = async () => {
     try {
-      let formData = new formData();
+      let formData = new FormData();
       formData.append("title", title);
       formData.append("image1", backendImage1);
       formData.append("image2", backendImage2);
@@ -32,7 +32,7 @@ function ListingContext({ children }) {
       formData.append("landmark", landmark);
       formData.append("category", category);
 
-      let result = await axios.post(serverUrl + "/api/listing/add", formData, {
+      let result = await axios.post(serverUrl + "api/listing/add", formData, {
         withCredentials: true,
       });
       console.log(result);
