@@ -4,9 +4,9 @@
 
 import jwt from "jsonwebtoken"
 
-const generateToken = async (userID) => {
+const generateToken = async (userId) => {
     try{
-        let token = await jwt.sign({userID},process.env.JWT_SECRET, {expiresIn:"7d"})
+        let token = await jwt.sign({userId},process.env.JWT_SECRET, {expiresIn:"7d"})
         return token ; 
     }catch (error) {
         console.log("Error comes from (fenerateToken) ", error)

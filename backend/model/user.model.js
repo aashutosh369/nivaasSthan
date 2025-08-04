@@ -14,14 +14,14 @@ const userSchema = new mongoose.Schema({
         type : String,
         required : true,
     },
-    listing : { // linking it to the (listing Schema) it can access all the value through populate method 
+    listing : [{ // linking it to the (listing Schema) it can access all the value through populate method 
         type : mongoose.Schema.Types.ObjectId,
         ref : "Listing",
-    },
-    booking : {  // linking userSchema to bookingSchema 
+    }],
+    booking : [{  // linking userSchema to bookingSchema 
         type : mongoose.Schema.Types.ObjectId,
         ref : "Booking"
-    }
+    }]
 },{ timestamps : true }); // saves time of all record creation 
 
 const userModel = mongoose.model("User",userSchema); // user name ka ek model create ho jayega jiss me user ka details rahega 

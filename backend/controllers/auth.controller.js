@@ -40,7 +40,7 @@ export const signUp = async (req, res) => {
 export const login = async (req, res) => {
   try {
     let { email, password } = req.body;
-    let user = await userModel.findOne({ email });
+    let user = await userModel.findOne({ email }).populate("listing");
     if (!user) {
       return res.status(400).json({ massage: "User does not exist ! " });
     }

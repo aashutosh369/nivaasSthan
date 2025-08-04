@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { TiArrowBack } from "react-icons/ti";
 import { useNavigate } from "react-router-dom";
-import { listingDataContext } from "../Context/listingContext";
+import { listingDataContext } from "../Context/ListingContext";
 
 function ListingPage3() {
   let {
@@ -30,6 +30,8 @@ function ListingPage3() {
     category,
     setCategory,
     handleAddListing,
+    adding,
+    setAdding
   } = useContext(listingDataContext);
   let navigate = useNavigate();
   console.log(landmark);
@@ -78,9 +80,9 @@ function ListingPage3() {
           type="submit"
           onClick={handleAddListing}
         //   onClick={() => navigate("/listingpage3")}
-        //   disabled={!category}
+          disabled={adding == true}
         >
-          Add 
+         {adding?"adding..." : "Add"}
         </button>
 
 

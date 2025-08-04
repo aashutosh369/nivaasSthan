@@ -14,6 +14,7 @@ function Login() {
   let [showText, setShowText] = useState(false);
   let {userData, setUserData} = useContext(userDataContext)
   let [email, setEmail] = useState("");
+  let [login,setLogin] = useState(false)
   let [password, setPassword] = useState("");
   let [alert, setAlert] = useState({ type: "", massage: "" });
 
@@ -24,6 +25,7 @@ function Login() {
     // console.log("handleLogin is called!");
     // console.log({ email, password });
     try {
+      setLogin(true)
       let loginData = await axios.post(
         serverUrl + "api/auth/login",
         {
@@ -36,6 +38,7 @@ function Login() {
       );
       setUserData(loginData.data.user)
       navigate("/")
+      setLogin(false)
       console.log(`Login Successfull!`);
       console.log(loginData);
       if (loginData.status === 201 || loginData.status === 200) {
@@ -145,8 +148,9 @@ function Login() {
         <button
           className="px-12 py-2 mt-6 bg-cyan-400 text-white md:px-24 rounded-lg hover:bg-cyan-500 transition duration-300 w-[40%] signupButton"
           type="submit"
+          disabled={login == true}
         >
-          Login
+          {login ? "proccessing" : "Login"}
         </button>
         <p className="text-[16px] my-3 mx-9">
           Don't have an account ?{" "}

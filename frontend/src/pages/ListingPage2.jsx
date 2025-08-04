@@ -11,7 +11,7 @@ import { FaBuilding } from "react-icons/fa";
 import { BsBuildings } from "react-icons/bs";
 import { BsShop } from "react-icons/bs";
 import { GiWoodCabin } from "react-icons/gi";
-import { listingDataContext } from "../Context/listingContext";
+import { listingDataContext } from "../Context/ListingContext.jsx";
 
 function ListingPage2() {
   let { category, setCategory } = useContext(listingDataContext);

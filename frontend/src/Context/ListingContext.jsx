@@ -1,10 +1,12 @@
 import axios from "axios";
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { authDataContext } from "./AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export const listingDataContext = createContext();
 
 function ListingContext({ children }) {
+  let navigate = useNavigate();
   let [title, setTitle] = useState("");
   let [description, setDescription] = useState("");
   let [frontendImage1, setFrontendImage1] = useState(null);
@@ -18,6 +20,9 @@ function ListingContext({ children }) {
   let [landmark, setLandmark] = useState("");
   let [category, setCategory] = useState("");
   let { serverUrl } = useContext(authDataContext);
+  let [adding, setAdding] = useState(false);
+  let [listingData, setListingData] = useState([]);
+  let [originalListingData, setOriginalListingData] = useState([]);
 
   const handleAddListing = async () => {
     try {
@@ -31,15 +36,52 @@ function ListingContext({ children }) {
       formData.append("city", city);
       formData.append("landmark", landmark);
       formData.append("category", category);
+      setAdding(true);
 
       let result = await axios.post(serverUrl + "api/listing/add", formData, {
         withCredentials: true,
       });
       console.log(result);
+      navigate("/");
+      setTitle("");
+      setBackendImage1(null);
+      setBackendImage2(null);
+      setBackendImage3(null);
+      setDescription("");
+      setRent();
+      setCity("");
+      setCategory("");
+      setLandmark("");
+      setAdding(false);
     } catch (error) {
       console.log(error);
     }
   };
+
+  const getListing = async () => {
+    try {
+      let result = await axios.get(serverUrl + "api/listing/get", {
+        withCredentials: true,
+      });
+      setListingData(result.data);
+      setOriginalListingData(result.data);
+    } catch (error) {
+      console.log(`Axios getListing error ${error}`);
+    }
+  };
+
+  useEffect(() => {
+    getListing();
+  }, [adding]);
+
+  const handleViewCard = async(id) => {
+    try{
+      let result = await axios.get(serverUrl + '/api/listing/findlistingbyid/${id}',{withCredentials:true})
+      console.log(result)
+    }catch(error){
+      console.log(`handleViewCard error ${error}`)
+    }
+  }
 
   let value = {
     title,
@@ -67,6 +109,13 @@ function ListingContext({ children }) {
     category,
     setCategory,
     handleAddListing,
+    adding,
+    setAdding,
+    listingData,
+    setListingData,
+    getListing,
+    originalListingData,
+    setOriginalListingData,
   };
 
   return (

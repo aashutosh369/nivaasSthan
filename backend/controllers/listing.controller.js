@@ -35,3 +35,26 @@ export const addListing = async (req, res) => {
     res.status(500).json({massage:`addListing error ${error}`})
   }
 };
+
+export const getListing = async(req,res) =>{
+  try{
+      let listings= await Listing.find().sort({createdAt:-1})
+      res.status(200).json(listings);
+  }catch(error){
+    res.status(500).json({message : `getListing error ${error}`})
+  }
+}
+
+
+export const findListing = async(req, res) => {
+  try{
+    let {id} = req.params
+    let listing = Listing.findById(id)
+    if(!listing) {
+      res.status(404).json({massage:"Listing not found!"})
+    }
+    res.status(200).json(listing)
+  }catch(error){
+    res.status(500).json({massage:`findListing Error ${error}`})
+  } 
+}

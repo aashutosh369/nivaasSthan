@@ -15,6 +15,7 @@ function SignUp() {
   let [name, setName] = useState("");
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
+  let [signupButton, setSignupButton] = useState(false);
 
   let [alert, setAlert] = useState({ type: "", massage: "" }); // show alert
 
@@ -23,6 +24,8 @@ function SignUp() {
     console.log("You clicked the button!");
     console.log({ name, email, password });
     try {
+      setSignupButton(true);
+
       let signUpData = await axios.post(
         serverUrl + "api/auth/signup/",
         {
@@ -37,6 +40,8 @@ function SignUp() {
         },
         { withCredentials: true }
       );
+      setSignupButton(false);
+
       setUserData(result.data)
       if (signUpData.status === 200 || signUpData.status === 201) {
         setAlert({
@@ -150,7 +155,7 @@ function SignUp() {
           className="px-12 py-2 mt-6 bg-cyan-400 text-white md:px-24 rounded-lg hover:bg-cyan-500 transition duration-300 w-[40%] signupButton"
           type="submit"
         >
-          SignUp
+          {signupButton ? "proccessing" : "Signup"}
         </button>
         <p className="text-[16px] my-3 mx-9">
           Don't have an account ?{" "}
