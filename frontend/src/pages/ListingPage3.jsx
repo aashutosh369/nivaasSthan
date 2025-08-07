@@ -36,7 +36,7 @@ function ListingPage3() {
   let navigate = useNavigate();
   console.log(landmark);
   return (
-    <div className="w-[100%] h-[100vh] bg-gray-900 flex items-start justify-center overflow-auto">
+    <div className="w-[100%] h-[100vh] flex items-start justify-center overflow-auto">
       <div className="back">
         <TiArrowBack
           className="h-[30px] w-[30px] absolute left-[2%] top-[2%] cursor-pointer text-[orange]"

@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { authDataContext } from "./AuthContext";
 import { useNavigate } from "react-router-dom";
+// import { userDataContext } from "./UserContext";
 
 export const listingDataContext = createContext();
 
@@ -23,6 +24,9 @@ function ListingContext({ children }) {
   let [adding, setAdding] = useState(false);
   let [listingData, setListingData] = useState([]);
   let [originalListingData, setOriginalListingData] = useState([]);
+  let [cardDetails, setCardDetails] = useState(null);
+  let [updateButton, setUpdateButton] = useState(false);
+  // let {userData} = useContext(userDataContext);
 
   const handleAddListing = async () => {
     try {
@@ -72,16 +76,24 @@ function ListingContext({ children }) {
 
   useEffect(() => {
     getListing();
-  }, [adding]);
+  }, [adding,updateButton]);
 
-  const handleViewCard = async(id) => {
-    try{
-      let result = await axios.get(serverUrl + '/api/listing/findlistingbyid/${id}',{withCredentials:true})
-      console.log(result)
-    }catch(error){
-      console.log(`handleViewCard error ${error}`)
+  const handleViewCard = async (id) => {
+    try {
+      let result = await axios.get(
+        serverUrl + `api/listing/findlistingbyid/${id}`,
+        { withCredentials: true }
+      );
+      console.log(result);
+      setCardDetails(result.data);
+
+      console.log(cardDetails);
+      navigate(`/viewcard/${id}`);
+      // console.log(userData);
+    } catch (error) {
+      console.log(`handleViewCard error ${error}`);
     }
-  }
+  };
 
   let value = {
     title,
@@ -116,6 +128,11 @@ function ListingContext({ children }) {
     getListing,
     originalListingData,
     setOriginalListingData,
+    handleViewCard,
+    cardDetails,
+    setCardDetails,
+    updateButton,
+    setUpdateButton,
   };
 
   return (

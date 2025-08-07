@@ -48,8 +48,8 @@ export const getListing = async(req,res) =>{
 
 export const findListing = async(req, res) => {
   try{
-    let {id} = req.params
-    let listing = Listing.findById(id)
+    let id = req.params.id
+    let listing =await Listing.findById(id)
     if(!listing) {
       res.status(404).json({massage:"Listing not found!"})
     }
@@ -57,4 +57,29 @@ export const findListing = async(req, res) => {
   }catch(error){
     res.status(500).json({massage:`findListing Error ${error}`})
   } 
+}
+
+export const updateListing = async (req,res) => {
+  try{
+    let {id} = req.params;
+    let {title, description, rent, city, landmark, category} = req.body;
+    let image1 = await uploadOnCloudinary(req.files.image1[0].path)
+    let image2 = await uploadOnCloudinary(req.files.image2[0].path)
+    let image3 = await uploadOnCloudinary(req.files.image3[0].path)
+    let listing = await Listing.findByIdAndUpdate(id,{
+      title,
+      description,
+      rent,
+      city,
+      landmark,
+      image1,
+      image2,
+      image3
+    },{new:true})
+
+    return res.status(201).json(listing)
+    
+  }catch(error){
+    console.log(`updateListing error ${error}`)
+  }
 }
