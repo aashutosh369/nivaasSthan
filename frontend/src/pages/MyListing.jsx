@@ -33,6 +33,8 @@ function MyListing() {
             image1={list.image1}
             image2={list.image2}
             image3={list.image3}
+            isBooked={list.isBooked}
+            host={list.host}
           ></Card>
         ))}
       </div>

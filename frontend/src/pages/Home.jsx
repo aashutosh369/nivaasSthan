@@ -21,6 +21,9 @@ function Home() {
             rent={list.rent}
             id={list._id}
             landmark={list.landmark}
+            ratings={list.ratings}
+            isBooked = {list.isBooked}
+            host = {list.host}
           />
         ))}
       </div>

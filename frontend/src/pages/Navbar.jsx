@@ -65,7 +65,7 @@ function Navbar() {
   }
 
   return (
-    <div className="bg-white fixed top-0 w-[100%]">
+    <div className="bg-white fixed top-0 w-[100%] ">
       <div className=" w-100% h-[80px] border-b-[1px] border-[#c8c8c8] flex flex-row justify-between items-center">
         <div className="mx-3">
           <img src="Logo.jpg" alt="" className="h-[60px] w-[70%] sm:w-[100%]" />
@@ -157,9 +157,10 @@ function Navbar() {
                   className="w-[100%] py-[10px] px-[10px] hover:bg-[#ffffff] cursor-pointer"
                   onClick={() => {
                     setShowUserPopup(false);
+                    navigate("/mybooking")
                   }}
                 >
-                  Check Booking
+                  My Booking
                 </li>
               </ul>
             </div>

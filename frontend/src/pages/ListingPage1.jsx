@@ -59,7 +59,7 @@ function ListingPage1() {
   }
 
   return (
-    <div className="w-[100%] h-[100vh] bg-gray-900 flex items-center justify-center overflow-auto">
+    <div className="w-[100%] h-[100vh]  flex items-center justify-center overflow-auto">
       <div className="back">
         <TiArrowBack
           className="h-[30px] w-[30px] absolute left-[2%] top-[2%] cursor-pointer text-[orange]"

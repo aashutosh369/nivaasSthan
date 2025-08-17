@@ -18,7 +18,7 @@ function ListingPage2() {
 
   let navigate = useNavigate();
   return (
-    <div className="w-[100%] h-[100vh] bg-gray-900 flex items-center justify-center overflow-auto">
+    <div className="w-[100%] h-[100vh]  flex items-center justify-center overflow-auto">
       <div className="back">
         <TiArrowBack
           className="h-[30px] w-[30px] absolute left-[2%] top-[2%] cursor-pointer text-[orange]"
@@ -30,11 +30,11 @@ function ListingPage2() {
         SetUp your Home
       </div>
 
-      <div className="max-w-[900px] w-[100%] md:w-[80%] h-[600px] flex item-center justify-start gap-[25px] mt-[50px] bg-amber-100 flex-col overflow-auto text-center">
+      <div className="max-w-[900px] w-[100%] md:w-[80%] h-[600px] flex item-center justify-start gap-[25px] mt-[50px]  flex-col overflow-auto text-center">
         <h1 className="mt-5">Which of these best describe your place ?</h1>
         <div className="flex item-center justify-center gap-9 sm:flex-row flex-col m-auto mt-8">
           <div
-            className={`w-[180px] h-[100px] flex justify-center items-center cursor-pointer border-[2px] hover:border-[#a6a5a5] text-[16px] rounded-lg bg-amber-400 flex-col ${
+            className={`w-[180px] h-[100px] flex justify-center items-center cursor-pointer border-[2px] hover:border-[#a6a5a5] text-[16px] rounded-lg  flex-col ${
               category == "villa" ? "border-5 border-white " : ""
             }`}
             onClick={() => {
@@ -49,7 +49,7 @@ function ListingPage2() {
           </div>
 
           <div
-            className={`w-[180px] h-[100px] flex justify-center items-center cursor-pointer border-[2px] hover:border-[#a6a5a5] text-[16px] rounded-lg bg-amber-400 flex-col ${
+            className={`w-[180px] h-[100px] flex justify-center items-center cursor-pointer border-[2px] hover:border-[#a6a5a5] text-[16px] rounded-lg flex-col ${
               category == "farmHouse" ? "border-5 border-white" : ""
             }`}
             onClick={() => {
@@ -64,7 +64,7 @@ function ListingPage2() {
           </div>
 
           <div
-            className={`w-[180px] h-[100px] flex justify-center items-center cursor-pointer border-[2px] hover:border-[#a6a5a5] text-[16px] rounded-lg bg-amber-400 flex-col ${
+            className={`w-[180px] h-[100px] flex justify-center items-center cursor-pointer border-[2px] hover:border-[#a6a5a5] text-[16px] rounded-lg flex-col ${
               category == "poolHouse" ? "border-5 border-white" : ""
             }`}
             onClick={() => {
@@ -79,7 +79,7 @@ function ListingPage2() {
         </div>
         <div className="flex item-center justify-center gap-9 sm:flex-row flex-col m-auto">
           <div
-            className={`w-[180px] h-[100px] flex justify-center items-center cursor-pointer border-[2px] hover:border-[#a6a5a5] text-[16px] rounded-lg bg-amber-400 flex-col ${
+            className={`w-[180px] h-[100px] flex justify-center items-center cursor-pointer border-[2px] hover:border-[#a6a5a5] text-[16px] rounded-lg flex-col ${
               category == "pg" ? "border-5 border-white" : ""
             }`}
             onClick={() => {
@@ -94,7 +94,7 @@ function ListingPage2() {
           </div>
 
           <div
-            className={`w-[180px] h-[100px] flex justify-center items-center cursor-pointer border-[2px] hover:border-[#a6a5a5] text-[16px] rounded-lg bg-amber-400 flex-col ${
+            className={`w-[180px] h-[100px] flex justify-center items-center cursor-pointer border-[2px] hover:border-[#a6a5a5] text-[16px] rounded-lg flex-col ${
               category == "flat" ? "border-5 border-white" : ""
             }`}
             onClick={() => {
@@ -109,7 +109,7 @@ function ListingPage2() {
           </div>
 
           <div
-            className={`w-[180px] h-[100px] flex justify-center items-center cursor-pointer border-[2px] hover:border-[#a6a5a5] text-[16px] rounded-lg bg-amber-400 flex-col ${
+            className={`w-[180px] h-[100px] flex justify-center items-center cursor-pointer border-[2px] hover:border-[#a6a5a5] text-[16px] rounded-lg flex-col ${
               category == "cabin" ? "border-5 border-white" : ""
             }`}
             onClick={() => {
@@ -125,7 +125,7 @@ function ListingPage2() {
         </div>
         <div className="flex item-center justify-center gap-9 sm:flex-row flex-col m-auto">
           <div
-            className={`w-[180px] h-[100px] flex justify-center items-center cursor-pointer border-[2px] hover:border-[#a6a5a5] text-[16px] rounded-lg bg-amber-400 flex-col ${
+            className={`w-[180px] h-[100px] flex justify-center items-center cursor-pointer border-[2px] hover:border-[#a6a5a5] text-[16px] rounded-lg flex-col ${
               category == "shop" ? "border-5 border-white" : ""
             }`}
             onClick={() => {
@@ -140,7 +140,7 @@ function ListingPage2() {
           </div>
 
           <div
-            className={`w-[180px] h-[100px] flex justify-center items-center cursor-pointer border-[2px] hover:border-[#a6a5a5] text-[16px] rounded-lg bg-amber-400 flex-col ${
+            className={`w-[180px] h-[100px] flex justify-center items-center cursor-pointer border-[2px] hover:border-[#a6a5a5] text-[16px] rounded-lg flex-col ${
               category == "home" ? "border-5 border-white " : ""
             }`}
             onClick={() => {

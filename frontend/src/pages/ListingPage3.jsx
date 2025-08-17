@@ -48,18 +48,18 @@ function ListingPage3() {
           {`In ${landmark.toUpperCase()},  ${city.toUpperCase()}`}
         </h1>
 
-        <div className="w-[95%] h-[400px] flex items-center justify-center flex-col md:w-[80%] md:flex-row bg-black">
+        <div className="w-[95%] h-[400px] flex items-center justify-center flex-col md:w-[80%] md:flex-row">
           <div
-            className="w-[95%] h-[100%] md:w-[60%] md:h-[100%] border-2 border-white bg-red-600 overflow-hidden flex justify-center items-center
+            className="w-[95%] h-[100%] md:w-[60%] md:h-[100%] border-2 border-white overflow-hidden flex justify-center items-center
             "
           >
             <img src={frontendImage1} alt="" className="w-[100%] h-[100%]" />
           </div>
-          <div className="md:w-[40%] md:h-[100%] w-[95%] h-[100%] bg-blue-100 flex flex-row md:flex-col">
-            <div className="w-[50%] md:w-[100%] md:h-[50%] h-[100%] border-2 border-white bg-amber-50">
+          <div className="md:w-[40%] md:h-[100%] w-[95%] h-[100%] flex flex-row md:flex-col">
+            <div className="w-[50%] md:w-[100%] md:h-[50%] h-[100%] border-2 border-white ">
               <img src={frontendImage2} alt="" className="w-[100%] h-[100%]" />
             </div>
-            <div className="w-[50%] md:w-[100%] md:h-[50%] h-[100%] border-2 border-white bg-amber-500">
+            <div className="w-[50%] md:w-[100%] md:h-[50%] h-[100%] border-2 border-white ">
               <img src={frontendImage3} alt="" className="w-[100%] h-[100%]" />
             </div>
           </div>

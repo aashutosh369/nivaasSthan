@@ -13,8 +13,13 @@ const listingSchema = new mongoose.Schema(
     },
     host: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: userModel,
+      ref: "userModel",
       required: true,
+    },
+    guest:{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "userModel",
+
     },
     image1: {
       type: String,
@@ -47,6 +52,12 @@ const listingSchema = new mongoose.Schema(
     isBooked: {
       type: Boolean,
       default: false,
+    },
+    ratings:{
+        type:Number,
+        min:0,
+        max:5,
+        default:0
     },
   },
   { timestamps: true }

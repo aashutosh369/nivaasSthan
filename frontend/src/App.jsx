@@ -10,6 +10,7 @@ import ListingPage3 from "./pages/ListingPage3";
 import { userDataContext } from "./Context/UserContext";
 import MyListing from "./pages/MyListing";
 import ViewCard from "./pages/ViewCard.jsx";
+import MyBooking from "./pages/MyBooking.jsx";
 
 // import Loginn from "./pages/SignUp";
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/listingpage2" element={<ListingPage2 />}></Route>
         <Route path="/listingpage3" element={<ListingPage3 />}></Route>
         <Route path="/mylisting" element={<MyListing />}></Route>
+        <Route path="/mybooking" element={<MyBooking />}></Route>
         <Route path="/viewcard/:id" element={<ViewCard />}></Route>
         {/* <Route
           path="/listingpage1"

@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
     }],
     booking : [{  // linking userSchema to bookingSchema 
         type : mongoose.Schema.Types.ObjectId,
-        ref : "Booking"
+        ref : "Listing"
     }]
 },{ timestamps : true }); // saves time of all record creation 
 

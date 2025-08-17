@@ -7,6 +7,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import userRouter from "./routes/user.route.js";
 import listingRouter from "./routes/listing.route.js";
+import bookingRouter from "./routes/booking.routes.js";
 
 dotenv.config();
 // getting PORT from dotenv file 
@@ -32,6 +33,9 @@ app.use("/api/user", userRouter)
 
 //listing ke liye listingRouter
 app.use("/api/listing",listingRouter)
+
+// booking ke liye router
+app.use("/api/booking",bookingRouter)
 
 // all requests coming from url at [http://localhost:8000/...] are listen by the express at the port ->.. 
 app.listen(port, async ()=>{

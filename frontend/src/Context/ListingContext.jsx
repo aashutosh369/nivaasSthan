@@ -20,12 +20,14 @@ function ListingContext({ children }) {
   let [city, setCity] = useState("");
   let [landmark, setLandmark] = useState("");
   let [category, setCategory] = useState("");
+  // let [ratings, setRatings] = useState(0);
   let { serverUrl } = useContext(authDataContext);
   let [adding, setAdding] = useState(false);
   let [listingData, setListingData] = useState([]);
   let [originalListingData, setOriginalListingData] = useState([]);
   let [cardDetails, setCardDetails] = useState(null);
   let [updateButton, setUpdateButton] = useState(false);
+  let [deleteing, setDeleteing] = useState(false);
   // let {userData} = useContext(userDataContext);
 
   const handleAddListing = async () => {
@@ -76,7 +78,7 @@ function ListingContext({ children }) {
 
   useEffect(() => {
     getListing();
-  }, [adding,updateButton]);
+  }, [adding, updateButton, deleteing]);
 
   const handleViewCard = async (id) => {
     try {
@@ -133,6 +135,10 @@ function ListingContext({ children }) {
     setCardDetails,
     updateButton,
     setUpdateButton,
+    deleteing,
+    setDeleteing,
+    // ratings,
+    // setRatings,
   };
 
   return (
