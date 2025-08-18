@@ -65,7 +65,7 @@ function Navbar() {
   }
 
   return (
-    <div className="bg-white fixed top-0 w-[100%] ">
+    <div className="bg-white fixed top-0 w-[100%] z-[999]">
       <div className=" w-100% h-[80px] border-b-[1px] border-[#c8c8c8] flex flex-row justify-between items-center">
         <div className="mx-3">
           <img src="Logo.jpg" alt="" className="h-[60px] w-[70%] sm:w-[100%]" />
@@ -188,14 +188,14 @@ function Navbar() {
       </div>
 
       {/* // imogie icons  */}
-      <div className="w-100% h-[80px] flex flex-row justify-start md:justify-center items-center gap-9 overflow-auto px-7 text-nowrap">
+      <div className="w-100% h-[80px] flex flex-row justify-start md:justify-center items-center gap-9 overflow-auto px-7 text-nowrap z-[999] bg-white">
         <div className="flex items-center justify-center flex-col hover:border-b-[1px] border-[#a6a5a5] text-[13px] "  onClick={()=>handleCategoryTrendingData("trending")}>
           <FaFire className="w-[30px] h-[30px] text-black" />
           <h3>Trending</h3>
         </div>
         <div
           className={`flex items-center justify-center flex-col hover:border-b-[1px] border-[#a6a5a5] text-[13px] ${
-            cat == "villa" ? "border-b-4 border-[#a6a5a5]" : ""
+            cat == "villa" ? "border-b-4 border-[#fb7e25]" : ""
           } `}
           onClick={() =>
             // setCat( "villa")
@@ -208,7 +208,7 @@ function Navbar() {
         </div>
         <div
           className={`flex items-center justify-center flex-col hover:border-b-[1px] border-[#a6a5a5] text-[13px] ${
-            cat == "farmHouse" ? "border-b-4 border-[#a6a5a5]" : ""
+            cat == "farmHouse" ? "border-b-4 border-[#fb7e25]" : ""
           }`}
           onClick={() => {
             // setCat( "farmHouse")
@@ -220,7 +220,7 @@ function Navbar() {
         </div>
         <div
           className={`flex items-center justify-center flex-col hover:border-b-[1px] border-[#a6a5a5] text-[13px] ${
-            cat == "poolHouse" ? "border-b-4 border-[#a6a5a5]" : ""
+            cat == "poolHouse" ? "border-b-4 border-[#fb7e25]" : ""
           }`}
           onClick={() => {
             // setCat( "poolHouse")
@@ -233,7 +233,7 @@ function Navbar() {
 
         <div
           className={`flex items-center justify-center flex-col hover:border-b-[1px] border-[#a6a5a5] text-[13px]  ${
-            cat == "pg" ? "border-b-4 border-[#a6a5a5]" : ""
+            cat == "pg" ? "border-b-4 border-[#fb7e25]" : ""
           }`}
           onClick={() => {
             // setCat( "pg")
@@ -245,7 +245,7 @@ function Navbar() {
         </div>
         <div
           className={`flex items-center justify-center flex-col hover:border-b-[1px] border-[#a6a5a5] text-[13px] ${
-            cat == "flat" ? "border-b-4 border-[#a6a5a5]" : ""
+            cat == "flat" ? "border-b-4 border-[#fb7e25]" : ""
           } `}
           onClick={() => {
             // setCat( "flat")
@@ -257,7 +257,7 @@ function Navbar() {
         </div>
         <div
           className={`flex items-center justify-center flex-col hover:border-b-[1px] border-[#a6a5a5] text-[13px] ${
-            cat == "cabin" ? "border-b-4 border-[#a6a5a5]" : ""
+            cat == "cabin" ? "border-b-4 border-[#fb7e25]" : ""
           }`}
           onClick={() => {
             // setCat( "cabin")
@@ -269,7 +269,7 @@ function Navbar() {
         </div>
         <div
           className={`flex items-center justify-center flex-col hover:border-b-[1px] border-[#a6a5a5] text-[13px] ${
-            cat == "shop" ? "border-b-4 border-[#a6a5a5]" : ""
+            cat == "shop" ? "border-b-4 border-[#fb7e25]" : ""
           }`}
           onClick={() => {
             // setCat( "shop")
@@ -281,7 +281,7 @@ function Navbar() {
         </div>
         <div
           className={`flex items-center justify-center flex-col hover:border-b-[1px] border-[#a6a5a5] text-[13px] ${
-            cat == "room" ? "border-b-4 border-[#a6a5a5]" : ""
+            cat == "room" ? "border-b-4 border-[#fb7e25]" : ""
           }`}
           onClick={() => {
             // setCat( "room")

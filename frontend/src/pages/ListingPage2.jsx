@@ -35,7 +35,7 @@ function ListingPage2() {
         <div className="flex item-center justify-center gap-9 sm:flex-row flex-col m-auto mt-8">
           <div
             className={`w-[180px] h-[100px] flex justify-center items-center cursor-pointer border-[2px] hover:border-[#a6a5a5] text-[16px] rounded-lg  flex-col ${
-              category == "villa" ? "border-5 border-white " : ""
+              category == "villa" ? "border-5 border-amber-600 " : ""
             }`}
             onClick={() => {
               setCategory("villa");
@@ -50,7 +50,7 @@ function ListingPage2() {
 
           <div
             className={`w-[180px] h-[100px] flex justify-center items-center cursor-pointer border-[2px] hover:border-[#a6a5a5] text-[16px] rounded-lg flex-col ${
-              category == "farmHouse" ? "border-5 border-white" : ""
+              category == "farmHouse" ? "border-5 border-amber-600 " : ""
             }`}
             onClick={() => {
               setCategory("farmHouse");
@@ -65,7 +65,7 @@ function ListingPage2() {
 
           <div
             className={`w-[180px] h-[100px] flex justify-center items-center cursor-pointer border-[2px] hover:border-[#a6a5a5] text-[16px] rounded-lg flex-col ${
-              category == "poolHouse" ? "border-5 border-white" : ""
+              category == "poolHouse" ? "border-5 border-amber-600 " : ""
             }`}
             onClick={() => {
               setCategory("poolHouse");
@@ -80,7 +80,7 @@ function ListingPage2() {
         <div className="flex item-center justify-center gap-9 sm:flex-row flex-col m-auto">
           <div
             className={`w-[180px] h-[100px] flex justify-center items-center cursor-pointer border-[2px] hover:border-[#a6a5a5] text-[16px] rounded-lg flex-col ${
-              category == "pg" ? "border-5 border-white" : ""
+              category == "pg" ? "border-5 border-amber-600 " : ""
             }`}
             onClick={() => {
               setCategory("pg");
@@ -95,7 +95,7 @@ function ListingPage2() {
 
           <div
             className={`w-[180px] h-[100px] flex justify-center items-center cursor-pointer border-[2px] hover:border-[#a6a5a5] text-[16px] rounded-lg flex-col ${
-              category == "flat" ? "border-5 border-white" : ""
+              category == "flat" ? "border-5 border-amber-600 " : ""
             }`}
             onClick={() => {
               setCategory("flat");
@@ -110,7 +110,7 @@ function ListingPage2() {
 
           <div
             className={`w-[180px] h-[100px] flex justify-center items-center cursor-pointer border-[2px] hover:border-[#a6a5a5] text-[16px] rounded-lg flex-col ${
-              category == "cabin" ? "border-5 border-white" : ""
+              category == "cabin" ? "border-5 border-amber-600 " : ""
             }`}
             onClick={() => {
               setCategory("cabin");
@@ -126,7 +126,7 @@ function ListingPage2() {
         <div className="flex item-center justify-center gap-9 sm:flex-row flex-col m-auto">
           <div
             className={`w-[180px] h-[100px] flex justify-center items-center cursor-pointer border-[2px] hover:border-[#a6a5a5] text-[16px] rounded-lg flex-col ${
-              category == "shop" ? "border-5 border-white" : ""
+              category == "shop" ? "border-5 border-amber-600 " : ""
             }`}
             onClick={() => {
               setCategory("shop");
@@ -141,7 +141,7 @@ function ListingPage2() {
 
           <div
             className={`w-[180px] h-[100px] flex justify-center items-center cursor-pointer border-[2px] hover:border-[#a6a5a5] text-[16px] rounded-lg flex-col ${
-              category == "home" ? "border-5 border-white " : ""
+              category == "home" ? "border-5 border-amber-600  " : ""
             }`}
             onClick={() => {
               setCategory("home");

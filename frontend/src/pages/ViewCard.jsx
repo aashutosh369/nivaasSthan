@@ -199,13 +199,12 @@ function ViewCard() {
           <button
             className="px-12 py-2 mt-6 bg-cyan-400 text-white md:px-24 rounded-lg hover:bg-cyan-500 transition duration-300 w-[40%] signupButton mb-10 m-auto text-nowrap text-2xl"
             type="submit"
-            // onClick={handleAddListing}
-            // onClick={() => navigate("/listingpage3")}
+            
             // disabled={adding == true}
             onClick={() => setUpdatePopUp(true)}
             // onClick={()=>{console.log("button clicked")}}
           >
-            edit
+            Edit
           </button>
         )}
 
@@ -448,6 +447,7 @@ function ViewCard() {
                   onClick={() => {
                     handleBooking(cardDetails._id);
                     setBookingButton(true);
+                    navigate("/")
                   }}
                 >
                   {bookingButton ? "Booking..." : "Book Now"}
@@ -485,15 +485,15 @@ function ViewCard() {
               </p>
               <p className="w-[100%] flex justify-between items-center px-[20px]">
                 <span className="font-semibold">Tax</span>
-                <span>{(cardDetails.rent * 12) / 100}</span>
+                <span>{((cardDetails.rent * 12) / 100).toFixed(2)}</span>
               </p>
               <p className="w-[100%] flex justify-between items-center px-[20px] border-b-[1px] border-gray-500 pb-[10px]">
                 <span className="font-semibold">nivaasSthan Charge</span>
-                <span>{(cardDetails.rent * 15) / 100}</span>
+                <span>{((cardDetails.rent * 15) / 100).toFixed(2)}</span>
               </p>
               <p className="w-[100%] flex justify-between items-center px-[20px]">
                 <span className="font-semibold">Total Price</span>
-                <span>{total}</span>
+                <span className="font-semibold">{total.toFixed(2)}</span>
               </p>
             </div>
           </div>

@@ -37,11 +37,11 @@ function Card({
   };
   return (
     <div
-      className="w-[330px] max-w-[85%] h-[460px] rounded-lg flex items-start justify-start cursor-pointer p-2 flex-col hover:shadow-lg relative z-[-10]"
+      className="w-[330px] max-w-[85%] h-[460px] rounded-lg flex items-start justify-start cursor-pointer p-2 flex-col hover:shadow-lg relative"
       onClick={() => (!isBooked ? handleClick() : null)}
     >
       {isBooked && (
-        <div className="text-[green] bg-white rounded-lg absolute flex items-center justify-center right-1 top-1 gap-[5px] p-[5px]">
+        <div className="text-[green] bg-white rounded-lg absolute flex items-center justify-center right-[10px] top-[10px] gap-[5px] p-[5px]">
           <GiConfirmed className="w-[20px] h-[20px] text-[green]" />
           Booked
         </div>
@@ -84,9 +84,9 @@ function Card({
       )}
 
       <div className="flex justify-start items-center overflow-auto w-[100%] h-[55%] bg-[#2e2d2d] rounded-lg ">
-        <img src={image1} alt="" className="w-[100%] h-[100%] flex-shrink-0" />
-        <img src={image2} alt="" className="w-[100%] h-[100%] flex-shrink-0" />
-        <img src={image3} alt="" className="w-[100%] h-[100%] flex-shrink-0" />
+        <img src={image1} alt="" className="w-[100%] h-full flex-shrink-0 object-cover" />
+        <img src={image2} alt="" className="w-[100%] h-full flex-shrink-0 object-cover" />
+        <img src={image3} alt="" className="w-[100%] h-full flex-shrink-0 object-cover" />
       </div>
 
       <div className="w-[100%] h-[33%] py-[20px] flex flex-col mt-5 gap-3">
