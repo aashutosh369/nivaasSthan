@@ -16,7 +16,7 @@ let port = process.env.PORT || 6000;
 const app = express() // express comes under -> (app)
 
 app.use(cors({
-    origin:"http://localhost:5173",
+    origin:["http://localhost:5173","https://nivaas-sthan.vercel.app"],
     credentials:true,
 }))
 

@@ -21,12 +21,11 @@ export const signUp = async (req, res) => {
     res.cookie("token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENVIRONMENT === "production",
-      sameSite: "strict",
+      sameSite: process.env.NODE_ENVIRONMENT === "production" ? "strict" : "none",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
     return res.status(201).json(user);
-
   } catch (err) {
     return res.status(500).json({ massage: `Signup Failed! ${err}` });
   }
@@ -53,10 +52,10 @@ export const login = async (req, res) => {
       res.cookie("token", token, {
         httpOnly: true,
         secure: process.env.NODE_ENVIRONMENT === "production",
-        sameSite: "strict",
+        sameSite: process.env.NODE_ENVIRONMENT === "production" ? "strict" : "none",
         maxAge: 7 * 24 * 60 * 60 * 1000,
       });
-      return res.status(201).json({massage:"Login Successful!", user })
+      return res.status(201).json({ massage: "Login Successful!", user });
     }
   } catch (error) {
     res.status(500).json({ massage: `Login Faield ! ${error}` });
@@ -65,11 +64,11 @@ export const login = async (req, res) => {
 
 // writing function for logOut
 
-export const logOut = async (req,res) => {
-  try{
-    res.clearCookie("token")
-    return res.status(200).json({massage:"Logout Successfylly!"});
-  }catch (error){
-    return res.status(500).json({massage:"Logout Failed", error});
+export const logOut = async (req, res) => {
+  try {
+    res.clearCookie("token");
+    return res.status(200).json({ massage: "Logout Successfylly!" });
+  } catch (error) {
+    return res.status(500).json({ massage: "Logout Failed", error });
   }
-}
+};
