@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { TiArrowBack } from "react-icons/ti";
-import { listingDataContext } from "../Context/ListingContext";
+import { listingDataContext } from "../Context/ListingContext.jsx";
 
 function ListingPage1() {
   let {

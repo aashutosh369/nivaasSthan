@@ -2,8 +2,8 @@ import React, { useContext } from 'react'
 
 import { useNavigate } from 'react-router-dom'
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { userDataContext } from '../Context/UserContext';
-import Card from './Card';
+import { userDataContext } from '../Context/UserContext.jsx';
+import Card from './Card.jsx';
 // import Card from '../Component/Card';
 
 

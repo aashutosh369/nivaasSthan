@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 
-import Login from "./pages/Login";
-import Home from "./pages/Home";
-import SignUp from "./pages/SignUp";
-import ListingPage1 from "./pages/ListingPage1";
-import ListingPage2 from "./pages/ListingPage2";
-import ListingPage3 from "./pages/ListingPage3";
-import { userDataContext } from "./Context/UserContext";
-import MyListing from "./pages/MyListing";
+import Login from "./pages/Login.jsx";
+import Home from "./pages/Home.jsx";
+import SignUp from "./pages/SignUp.jsx";
+import ListingPage1 from "./pages/ListingPage1.jsx";
+import ListingPage2 from "./pages/ListingPage2.jsx";
+import ListingPage3 from "./pages/ListingPage3.jsx";
+import { userDataContext } from "./Context/UserContext.jsx";
+import MyListing from "./pages/MyListing.jsx";
 import ViewCard from "./pages/ViewCard.jsx";
 import MyBooking from "./pages/MyBooking.jsx";
 

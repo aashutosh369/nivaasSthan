@@ -2,10 +2,10 @@ import React, { useContext, useState } from "react";
 import { TbEyeCheck } from "react-icons/tb";
 import { TbEyeCancel } from "react-icons/tb";
 import { TiArrowBack } from "react-icons/ti";
-import { authDataContext } from "../Context/AuthContext"; //authDataContext
+import { authDataContext } from "../Context/AuthContext.jsx"; //authDataContext
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { userDataContext } from "../Context/UserContext";
+import { userDataContext } from "../Context/UserContext.jsx";
 
 function SignUp() {
   let navigate = useNavigate();

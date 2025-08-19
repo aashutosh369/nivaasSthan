@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { TiArrowBack } from "react-icons/ti";
-import { listingDataContext } from "../Context/ListingContext";
-import { userDataContext } from "../Context/UserContext";
+import { listingDataContext } from "../Context/ListingContext.jsx";
+import { userDataContext } from "../Context/UserContext.jsx";
 import { RxCross1 } from "react-icons/rx";
 import axios from "axios";
-import { authDataContext } from "../Context/AuthContext";
+import { authDataContext } from "../Context/AuthContext.jsx";
 import { FaIndianRupeeSign } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa";
-import { bookingDataContext } from "../Context/BookingContext";
+import { bookingDataContext } from "../Context/BookingContext.jsx";
 
 function ViewCard() {
   let navigate = useNavigate();

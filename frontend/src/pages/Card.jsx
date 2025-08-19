@@ -1,13 +1,13 @@
 import React, { useContext, useState } from "react";
 import { LuIndianRupee } from "react-icons/lu";
-import { userDataContext } from "../Context/UserContext";
-import { listingDataContext } from "../Context/ListingContext";
+import { userDataContext } from "../Context/UserContext.jsx";
+import { listingDataContext } from "../Context/ListingContext.jsx";
 import { useNavigate } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import { GiConfirmed } from "react-icons/gi";
 
 import { FcCancel } from "react-icons/fc";
-import { bookingDataContext } from "../Context/BookingContext";
+import { bookingDataContext } from "../Context/BookingContext.jsx";
 function Card({
   id,
   title,

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import Navbar from "./Navbar";
-import { listingDataContext } from "../Context/ListingContext";
-import Card from "./Card";
+import Navbar from "./Navbar.jsx";
+import { listingDataContext } from "../Context/ListingContext.jsx";
+import Card from "./Card.jsx";
 
 function Home() {
   let { listingData, setListingData } = useContext(listingDataContext);

@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { createContext, useContext, useState } from "react";
-import { authDataContext } from "./AuthContext";
-import { userDataContext } from "./UserContext";
-import { listingDataContext } from "./ListingContext";
+import { authDataContext } from "./AuthContext.jsx";
+import { userDataContext } from "./UserContext.jsx";
+import { listingDataContext } from "./ListingContext.jsx";
 import { toast } from 'react-toastify';
 export const bookingDataContext = createContext();
 

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { TiArrowBack } from "react-icons/ti";
-import { userDataContext } from "../Context/UserContext";
+import { userDataContext } from "../Context/UserContext.jsx";
 import Card from "./Card.jsx";
 
 function MyListing() {

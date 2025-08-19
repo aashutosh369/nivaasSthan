@@ -15,10 +15,10 @@ import { MdBedroomParent } from "react-icons/md";
 import { BsSearchHeart } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 
-import { authDataContext } from "../Context/AuthContext";
+import { authDataContext } from "../Context/AuthContext.jsx";
 import axios from "axios";
-import { userDataContext } from "../Context/UserContext";
-import { listingDataContext } from "../Context/ListingContext";
+import { userDataContext } from "../Context/UserContext.jsx";
+import { listingDataContext } from "../Context/ListingContext.jsx";
 
 function Navbar() {
   let navigate = useNavigate();
