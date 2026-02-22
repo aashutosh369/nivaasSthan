@@ -1,5 +1,7 @@
 **Nivashasthan – Property Rental Platform**
 
+DEMO LINK :->  https://nivaas-sthan.vercel.app/
+
 **Project Description**
 
     ↣ Nivashasthan is a full-stack property rental web application built using the MERN stack.
