@@ -9,11 +9,17 @@
     ↣ The platform focuses on secure authentication, clean REST API architecture, responsive UI design, and cloud-based image storage.
 
 **Tech Stack**
+
     ⁕ Frontend
+    
         React.js
+        
         React Router
+        
         Tailwind CSS
+        
         Axios
+   
    ⁕ Backend
         Node.js
         Express.js
