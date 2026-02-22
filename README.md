@@ -21,16 +21,25 @@
         Axios
    
    ⁕ Backend
+       
         Node.js
+        
         Express.js
+        
         RESTful APIs    
    ⁕ Database
+   
         MongoDB
+        
         Mongoose
+        
         MongoDB Atlas
    ⁕ Authentication & Security
+        
         JWT (JSON Web Tokens)
+        
         HTTP-only Cookies
+        
         Protected Routes
    ⁕ Cloud Services
         Cloudinary (Image Upload & Storage)
