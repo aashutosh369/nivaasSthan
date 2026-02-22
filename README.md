@@ -1,9 +1,11 @@
 **Nivashasthan – Property Rental Platform**
 
 **Project Description**
+
     ↣ Nivashasthan is a full-stack property rental web application built using the MERN stack.
     
     ↣ It allows users to securely register, log in, and manage property listings with image uploads.
+    
     ↣ The platform focuses on secure authentication, clean REST API architecture, responsive UI design, and cloud-based image storage.
 
 **Tech Stack**
